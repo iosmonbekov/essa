@@ -1,10 +1,17 @@
 <template>
+  <Header />
+
+  <div class="layout">
+    <Sidebar />
+    <TodoList />
+  </div>
 </template>
 
 <script setup>
-import { useTodoStore } from '@/store/useTodoStore';
-
-const store = useTodoStore();
+import Header from '@/components/Header.vue';
+import Sidebar from '@/components/Sidebar/Sidebar.vue';
+import TodoList from '@/views/TodoPage/TodoList.vue';
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+</style>
