@@ -1,5 +1,5 @@
 import $api from '@/http';
-import { responseParser } from '@/utils';
+import { responseParser } from '@/assets/utils';
 
 export default {
   async getAllTodos() {
