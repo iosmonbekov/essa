@@ -1,5 +1,10 @@
 <template>
-	<Sidebar />
+  <Header />
+
+  <div class="layout">
+    <Sidebar />
+    <TodoList />
+  </div>
 </template>
 
 <script setup>
