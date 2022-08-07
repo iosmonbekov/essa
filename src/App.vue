@@ -1,13 +1,8 @@
 <template>
-	<div>
-		<h1>Hello, Essa</h1>
-		<TodoList />
-		<button @click="toggleDark"></button>
-	</div>
+	<h1>Hello, Essa</h1>
 </template>
 
 <script setup>
-import TodoList from '@/views/TodoPage/Index.vue';
 </script>
 
 <style scoped>
