@@ -3,20 +3,24 @@
     <h1 class="todos__title">
       Monday
     </h1>
-    <button class="todos__button" @click="DetailsPopupStore.open">
+    <button class="todos__button" @click="detailsPopup.open">
       <span>Add Todo</span>
     </button>
     <TodoItem />
     <TodoItem />
     <TodoItem />
   </div>
-  <DetailsPopup />
+  <DetailsPopup ref="detailsPopup" />
 </template>
 
 <script setup>
-import TodoItem from '@/views/TodoPage/TodoItem.vue';
-import DetailsPopup from '@/views/TodoPage/DetailsPopup/DetailsPopup.vue';
-import { useDetailsPopup } from '@/views/TodoPage/DetailsPopup/useDetailsPopup.js';
+import { ref } from 'vue';
+import { useTodoStore } from '@/store/useTodoStore';
 
-const DetailsPopupStore = useDetailsPopup();
+import TodoItem from '@/views/TodoPage/TodoItem.vue';
+import DetailsPopup from '@/components/DetailsPopup.vue';
+
+const todoStore = useTodoStore();
+
+const detailsPopup = ref(null);
 </script>

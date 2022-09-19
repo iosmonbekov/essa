@@ -1,6 +1,6 @@
 <template>
-  <div class="popup" :class="{ 'active': DetailsPopup.active }" @click="DetailsPopup.close">
-    <div class="popup-body">
+  <div class="popup" :class="{ active }" @click="close">
+    <div class="popup-body" @click.stop>
       <div class="popup-content">
         <div class="popup-content__header">Detail</div>
         <form class="popup-form">
@@ -29,7 +29,20 @@
 </template>
 
 <script setup>
-import { useDetailsPopup } from '@/views/TodoPage/DetailsPopup/useDetailsPopup.js';
+import { ref } from 'vue';
 
-const DetailsPopup = useDetailsPopup();
+const active = ref(false);
+
+function open() {
+  active.value = true;
+}
+
+function close() {
+  active.value = false;
+}
+
+defineExpose({
+  open,
+  close
+});
 </script>
